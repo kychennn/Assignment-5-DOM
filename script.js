@@ -1,5 +1,7 @@
 let columns = 1;
-
+let mouseOver = false;
+let selectedColor = "";
+let currentColor = "";
 
 function addRow() {
     let table = document.getElementById("table");
@@ -45,4 +47,60 @@ function removeColumn() {
         tr[i].removeChild(tr[i].lastChild);
     }
     columns--;
+}
+
+
+
+function fillAllUncoloredCells() {
+  let color = document.querySelector("#color").value;
+  let allCells = document.getElementsByTagName("td");
+  for (let i = 0; i < allCells.length; i++) {
+    if (allCells[i].style.backgroundColor == "") {
+      allCells[i].style.backgroundColor = color;
+    }
+  }
+}
+
+
+function fillAllCells() {
+  let color = document.querySelector("#color").value;
+    let allCells = document.getElementsByTagName("td");
+    for (let i = 0; i < allCells.length; i++) {
+        allCells[i].style.backgroundColor = color;
+    }
+}
+
+
+function clearAllCells() {
+    let allCells = document.getElementsByTagName("td");
+    for (let i = 0; i < allCells.length; i++) {
+        allCells[i].style.backgroundColor = "";
+    }
+}
+
+
+function colorChange(cell){
+    let color = document.querySelector("#color").value;
+    cell.addEventListener("click", function() {
+      cell.style.backgroundColor = color;
+    })
+
+    cell.addEventListener("mousedown", function() {
+        mouseOver = true;
+        cell.style.backgroundColor = color;
+    })
+
+    cell.addEventListener("mousemove" , function() {
+        if (mousOver == true)
+        {
+            cell.style.backgroundColor = color;
+        }
+    })
+
+    cell.addEventListener("mouseup" , function() {
+        if (mouseOver == true)
+        {
+            mouseOver = false;
+        }
+    })
 }
