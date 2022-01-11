@@ -1,6 +1,6 @@
 let columns = 1;
 
-// Adds rows to table
+
 function addRow() {
     let table = document.getElementById("table");
     let row = document.createElement("tr");
@@ -13,7 +13,7 @@ function addRow() {
     }
 }
 
-// Removes rows from table
+
 function removeRow() {
     let row = document.getElementsByClassName("row");
     let tr = Array.from(row);
@@ -21,7 +21,7 @@ function removeRow() {
 }
 
 
-// Adds columns to table
+
 function addColumn() {
     let row = document.getElementsByClassName("row");
     let tr = Array.from(row);
@@ -33,7 +33,7 @@ function addColumn() {
     columns++;
 }
 
-// Removes columns to table
+
 function removeColumn() {
     let row = document.getElementsByClassName("row");
     let tr = Array.from(row);
