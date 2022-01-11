@@ -1,0 +1,10 @@
+#table {
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+tr, td {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
