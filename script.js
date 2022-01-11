@@ -1,7 +1,5 @@
 let columns = 1;
 let mouseOver = false;
-let selectedColor = "";
-let currentColor = "";
 
 function addRow() {
     let table = document.getElementById("table");
